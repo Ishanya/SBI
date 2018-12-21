@@ -1,0 +1,121 @@
+<html>
+<head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+        <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css" integrity="sha384-mzrmE5qonljUremFsqc01SB46JvROS7bZs3IO2EmfFsd15uHvIt+Y8vEf7N7fWAU" crossorigin="anonymous">
+       
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+       
+        <script src="Sample_log.js"></script>
+        <style>
+        body{
+          background-image: linear-gradient(to right,rgb(36, 34, 34),rgb(57, 57, 105));
+        }
+        </style>
+</head>
+<body   onload="log()">
+  
+        <img src="Sample_sbi_image\SBI_logo2017.png" style="width:6.5%;height:4vh;margin:2% 0% 2% 2%;float:left;">
+        <h3 id="i1" style="margin:2% 2% 0% 0%;color:whitesmoke;float:right;">WELCOME<span>.</span></h3>
+<div class="container">
+    <p id="rata" style="font-size: 480%;color:whitesmoke; margin:15% 0% 0% 25%;">This is me</p>
+    <div class="container" style="margin:10% 0% 0% 0%;">
+        <button id="btn1" class="btn btn-primary" data-toggle="modal" data-target="#btn1Modal" style="height: 10%;width:30%;" >DEPOSIT</button>
+        
+<div class="modal fade" id="btn1Modal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog" role="document">
+          <div class="modal-content">
+            <div class="modal-header">
+                    <img src="Sample_sbi_image\SBI_logo2017.png" style="width:8%;height:3.5vh;margin:1% 0% 1% 0%;float:left;">
+                    <center> <b>   <h3 class="modal-title" id="exampleModalLabel">DEPOSIT</h3></b></center>
+                       <button type="button" class="close" data-dismiss="modal" aria-label="Close" style="position: absolute;margin:-5% 0% 0% 85%;" >
+                <span aria-hidden="true">&times;</span>
+              </button>
+            </div>
+            <div class="modal-body">
+              <form>
+                <div class="form-group">
+                  <label for="Amount" class="col-form-label">Amount</label>
+                  <input type="text" class="form-control" id="deposit" pattern="[0-9]+">
+                </div>
+                <div class="form-group">
+                  <button type="button" class="btn btn-secondary" data-dismiss="modal" style="float:left;margin-top: 3.5%;">Close</button>
+                  <input type="button" class="btn btn-primary" onclick="depositt()"  data-dismiss="modal" style="margin-left: 75%;margin-top: 3.5%;" value="Deposit">
+                </div>
+              </form>
+            </div>
+           
+          </div>
+        </div>
+      </div>
+        
+        <button id="btn2" class="btn btn-primary" style="  margin-left:3%;height: 10%;width:30%;" data-toggle="modal" data-target="#btn2Modal" >WITHDRAW</button>
+        
+<div class="modal fade" id="btn2Modal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog" role="document">
+          <div class="modal-content">
+            <div class="modal-header">
+                    <img src="Sample_sbi_image\SBI_logo2017.png" style="width:8%;height:3.5vh;margin:1% 0% 1% 0%;float:left;">
+                    <center> <b>   <h3 class="modal-title" id="exampleModalLabel" >WITHDRAW</h3></b></center>
+                       <button type="button" class="close" data-dismiss="modal" aria-label="Close" style="position: absolute;margin:-5% 0% 0% 85%;" >
+                <span aria-hidden="true">&times;</span>
+              </button>
+            </div>
+            <div class="modal-body">
+              <form>
+                <div class="form-group">
+                  <label for="amt" class="col-form-label">Amount</label>
+                  <input type="text" class="form-control" id="withdraw" pattern="[0-9]+">
+                </div>
+                <div class="form-group">
+                  <button type="button" class="btn btn-secondary" data-dismiss="modal" style="float:left;margin-top:3.5%">Close</button>
+                  <input type="button" class="btn btn-primary"   data-dismiss="modal" style="margin-left: 72%;margin-top: 3.5%" value="Withdraw" onclick="withdraww()">
+                </div>
+              </form>
+            </div>
+          
+          </div>
+        </div>
+      </div>
+      <button id="btn3" class="btn btn-primary" data-toggle="modal" data-target="#btn3Modal" style="height: 10%;width:30%;margin-left: 3%;" >TRANSFER</button>
+        
+      <div class="modal fade" id="btn3Modal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+              <div class="modal-dialog" role="document">
+                <div class="modal-content">
+                  <div class="modal-header">
+                          <img src="Sample_sbi_image\SBI_logo2017.png" style="width:8%;height:3.5vh;margin:1% 0% 1% 0%;float:left;">
+                          <center> <b>   <h3 class="modal-title" id="exampleModalLabel">DEPOSIT</h3></b></center>
+                             <button type="button" class="close" data-dismiss="modal" aria-label="Close" style="position: absolute;margin:-5% 0% 0% 85%;" >
+                      <span aria-hidden="true">&times;</span>
+                    </button>
+                  </div>
+                  <div class="modal-body">
+                    <form  >
+                      <div class="form-group">
+                        <label for="Amount" class="col-form-label">Amount</label>
+                        <input type="text" class="form-control" id="transact" pattern="[0-9]+">
+                      </div>
+                      <div class="form-group">
+                        <label for="receiver" class="col-form-label">Recipient</label>
+                        <input type="text" class="form-control" id="receiver" pattern="[A-Za-z]+">
+                      </div>
+                      <div class="form-group">
+                        <button type="button" class="btn btn-secondary" data-dismiss="modal" style="float:left;margin-top: 3.5%;">Close</button>
+                        <input type="button" class="btn btn-primary"  data-dismiss="modal" style="margin-left: 75%;margin-top: 3.5%;" value="Tranfer" onclick="Transactions()">
+                      </div>
+                    </form>
+                  </div>
+                 
+                </div>
+              </div>
+            </div>
+              
+
+    </div>
+    
+</div>
+<center><button class="btn btn-primary btn-lg" style="margin-top: 3%;" onclick="logout()">LOGOUT</button></center>
+</body>
+</html>
